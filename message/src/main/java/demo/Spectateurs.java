@@ -6,9 +6,8 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
-// la bibliothèque org.springframework/spring-aspects
-// et le mappage op qui va bien
-// ont été ajoutés
+// la bibliothèque org.springframework/spring-aspects a été ajoutée
+
 @Component
 @Aspect
 @EnableAspectJAutoProxy

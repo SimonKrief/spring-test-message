@@ -23,6 +23,8 @@
 
 	</bean>
 
+<!-- la bibliothèque org.springframework/spring-aspects a été ajoutée -->
+
 	<bean id="spectateurs" class="demo.Spectateurs" />
 	<aop:config>
 		<aop:pointcut expression="execution(* *.jouer*(..))"
