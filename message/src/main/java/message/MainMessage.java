@@ -6,23 +6,24 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@ComponentScan
+//@ComponentScan
 public class MainMessage {
 	public static void main(String[] args) {
 
-//		//ce que nous faisions avant:
-//		try( AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("config.xml")){
-//		
-//		EmailSender renardDeFeu = ctx.getBean(EmailSender.class);
-//		Message email = ctx.getBean(Message.class);
-//
-//		renardDeFeu.send(email);
-//		}
 
-		try (AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(MainMessage.class)) {
-			EmailSender renardDeFeu = ctx.getBean(EmailSender.class);
+
+		try (AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class)) {
+			// problème de couplage
+// 			EmailSender renardDeFeu = ctx.getBean(EmailSender.class);
+			
+			//utilisation de la classe abstraite
+			//Remarque: on ne doit pas mettre une majuscule
+			MessageSender renardDeFeu = ctx.getBean("emailSender",MessageSender.class);
+
 			Message email = ctx.getBean(Message.class);
 			renardDeFeu.send(email);
+
+
 
 		}
 	}

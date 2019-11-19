@@ -3,12 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="instrument" class="demo.Violon">
-	</bean>
-	<bean id="musicien" class="demo.Musicien">
-		<property name="partition" value="Au clair de la lune"></property>
-		<property name="instrument" ref="instrument"></property>
+<!-- 	<bean id="instrument" class="demo.Violon"> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="musicien" class="demo.Musicien"> -->
+<!-- 		<property name="partition" value="Au clair de la lune"></property> -->
+<!-- 		<property name="instrument" ref="instrument"></property> -->
 
-	</bean>
+<!-- 	</bean> -->
 
 </beans>

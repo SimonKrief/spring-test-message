@@ -3,7 +3,7 @@ package demo;
 import org.springframework.stereotype.Component;
 
 //to be instaciated:
-//@Component
+@Component
 public class Piano implements Instrument {
 
 	@Override
