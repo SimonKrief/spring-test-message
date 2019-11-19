@@ -12,7 +12,7 @@ public class MainDemoSpringXml {
 //		ApplicationContext ctx = new ClassPathXmlApplicationContext("config2.xml");
 //		Musicien musicien = ctx.getBean(Musicien.class);
 //		musicien.jouer();
-		
+	
 		try (AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(MainDemoSpringXml.class)){
 			Musicien musicien = ctx.getBean(Musicien.class);
 			musicien.jouer();

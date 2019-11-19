@@ -22,6 +22,14 @@ public class Musicien {
 		super();
 		this.instrument = instrument;
 	}
+	
+	
+
+	public Musicien() {
+		super();
+	}
+
+
 
 	public void jouer() {
 		System.out.println("partition: " + partition);

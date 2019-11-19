@@ -1,28 +1,29 @@
 package message;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-//@ComponentScan
 public class MainMessage {
 	public static void main(String[] args) {
 
-
-
 		try (AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(ApplicationConfig.class)) {
-			// problème de couplage
-// 			EmailSender renardDeFeu = ctx.getBean(EmailSender.class);
 			
 			//utilisation de la classe abstraite
 			//Remarque: on ne doit pas mettre une majuscule
 			MessageSender renardDeFeu = ctx.getBean("emailSender",MessageSender.class);
+			MessageSender _3310 = ctx.getBean("smsSender",MessageSender.class);
 
 			Message email = ctx.getBean(Message.class);
-			renardDeFeu.send(email);
+			email.setText("Salut");
 
+			Message sms =  ctx.getBean(Message.class);
+			sms.setText("wesh");
+			
+			
+			//En l'absence de l'annotation "prototype" sur le BeanFactory, 
+			//on obtient le même message
+			renardDeFeu.send(email);
+			_3310.send(sms);
 
 
 		}
